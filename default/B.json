@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1780053105242,
     "description" : "",
@@ -7,5 +8,168 @@
     "name" : "B",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "test dev",
+    "outputPorts" : [ ],
+    "parameterContextName" : "FM_BASE",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "FM_BASE" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "FM_BASE",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "bp.ingestion.object.threshold",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "bp.sink.object.threshold",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "canonical.schema.text",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "{\n  \"namespace\": \"com.celfocus.cap.avro.harmonizer.v1\",\n  \"type\": \"record\",\n  \"name\": \"AlarmAvro\",\n  \"fields\": [\n    { \"name\": \"ackState\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Current acknowledgement state of the alarm.\" },\n    { \"name\": \"ackSystemId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the system that acknowledged the alarm.\" },\n    { \"name\": \"ackTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm was acknowledged.\" },\n    { \"name\": \"ackUserId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the user who acknowledged the alarm.\" },\n    { \"name\": \"address\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Street address or detailed address of the location associated with the alarm.\" },\n    { \"name\": \"affectedClientNumber\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Number of clients or subscribers affected by the alarm.\" },\n    { \"name\": \"affectedService\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Reference(s) to services affected by the alarm.\" },\n    { \"name\": \"alarmAdditionalDetails\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Additional information not captured in other attributes, often a name-value set to extend the alarm payload.\" },\n    { \"name\": \"alarmChangedTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm was last changed or updated.\" },\n    { \"name\": \"alarmClearedTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm condition was cleared on the resource.\" },\n    { \"name\": \"alarmDetails\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Detailed description of the alarm, providing additional information about the condition and context.\" },\n    { \"name\": \"alarmDomain\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Domain or functional area of the alarm (for example, transmission, access, core, IT). Determined by cognitive automation platform (cap-harmonizer).\" },\n    { \"name\": \"alarmedContext\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Context (for example, domain or scope) in which the alarmed object resides. (Previous Operation Context - ocName in TeMIP)\" },\n    { \"name\": \"alarmedObject\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Reference to the object associated with the event that raised the alarm (for example, NE, interface, service component).\" },\n    { \"name\": \"alarmedObjectDetails\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Additional information of the object associated with the event.\" },\n    { \"name\": \"alarmedObjectId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the object associated with the event that raised the alarm.\" },\n    { \"name\": \"alarmedObjectType\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Type or class of the object associated with the event (for example, ROUTER, INTERFACE, SERVICE).\" },\n    { \"name\": \"alarmEscalation\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Indicates if this alarm has been escalated or not, and may hold related escalation data.\" },\n    { \"name\": \"alarmEventType\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Type of event that triggered the alarm lifecycle change (for example, alarmCreated, alarmChanged, alarmCleared).\" },\n    { \"name\": \"alarmRaisedTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm was initially raised on the resource.\" },\n    { \"name\": \"alarmReportingTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm was reported into this alarm management system.\" },\n    { \"name\": \"alarmType\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Category of the alarm (for example, CommunicationAlarm, QualityOfServiceAlarm), representing the high-level type of the detected condition.\" },\n    { \"name\": \"cellName\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Name of the radio cell associated with the alarm.\" },\n    { \"name\": \"circuitDetails\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Details of the affected circuit, such as identifiers or characteristics relevant to the alarm.\" },\n    { \"name\": \"clearSystemId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the system that cleared the alarm.\" },\n    { \"name\": \"clearUserId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the user who cleared the alarm.\" },\n    { \"name\": \"closedEventTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm was closed in this alarm. Determined by cognitive automation platform (cap-harmonizer).\" },\n    { \"name\": \"comment\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Free-form text comment associated to the alarm, usually added by operators or external systems.\" },\n    { \"name\": \"correlatedAlarm\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"References to alarms that are correlated to this alarm from a correlation or root cause perspective.\" },\n    { \"name\": \"county\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"County or administrative area where the alarmed resource is located.\" },\n    { \"name\": \"criticalSite\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Indicates whether the associated site is considered critical (for example, true/false). Determined by cognitive automation platform (cap-harmonizer).\" },\n    { \"name\": \"crossedThresholdInformation\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Details of the threshold that has been crossed, including indicator, value, and threshold identifiers for threshold-crossing alarms.\" },\n    { \"name\": \"equipment\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Equipment associated with the alarm.\" },\n    { \"name\": \"equipmentId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier or name of the equipment instance associated with the alarm.\" },\n    { \"name\": \"equipmentType\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Type or category of the equipment associated with the alarm. Enriched from federated inventory data.\" },\n    { \"name\": \"eventTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm-event was created/updated.\" },\n    { \"name\": \"eventUid\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Unique identifier of the alarm-event. Determined by cognitive automation platform (cap-harmonizer).\" },\n    { \"name\": \"externalAlarmId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the alarm in the source system, used to correlate with the external alarm record.\" },\n    { \"name\": \"fiEquipmentCode\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Code or identifier of the equipment associated with the alarm. Enriched from federated inventory data.\" },\n    { \"name\": \"fiEquipmentLatitude\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Latitude coordinate of the equipment site associated with the alarm. Enriched from federated inventory data.\" },\n    { \"name\": \"fiEquipmentLongitude\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Longitude coordinate of the equipment site associated with the alarm. Enriched from federated inventory data.\" },\n    { \"name\": \"fiEquipmentRegion\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Geographical region of the equipment associated with the alarm. Enriched from federated inventory data.\" },\n    { \"name\": \"fiEquipmentTechnology\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Technology of the equipment associated with the alarm (for example, 2G, 3G, LTE, 5G). Enriched from federated inventory data.\" },\n    { \"name\": \"fiSiteCity\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"City of the site associated with the alarm. Enriched from federated inventory data.\" },\n    { \"name\": \"fiSiteCode\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Code or identifier of the site associated with the alarm. Enriched from federated inventory data.\" },\n    { \"name\": \"id\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the alarm.\" },\n    { \"name\": \"isAlarmInActiveState\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Indicates whether the alarm is still active (true) or no longer active (false). Determined by cognitive automation platform (cap-harmonizer).\" },\n    { \"name\": \"isRootCause\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Indicates whether the alarm is a root cause alarm (true) or a symptom alarm (false).\" },\n    { \"name\": \"lastModifiedUserId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the user who last modified the alarm (for example, by acknowledging or updating it).\" },\n    { \"name\": \"latitude\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Equipment latitude.\" },\n    { \"name\": \"location\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Free-form location description or address fragment of the alarmed resource.\" },\n    { \"name\": \"locationCity\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"City where the alarmed resource is located.\" },\n    { \"name\": \"locationCountry\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Country where the alarmed resource is located.\" },\n    { \"name\": \"locationDistrict\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"District or sub-region associated with the location of the alarmed resource.\" },\n    { \"name\": \"locationId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the location associated with the alarmed resource.\" },\n    { \"name\": \"locationRegion\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Region associated with the location of the alarmed resource.\" },\n    { \"name\": \"locationType\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Type of location (for example, site, building, room) associated with the alarm.\" },\n    { \"name\": \"longitude\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Equipment longitude.\" },\n    { \"name\": \"nodeDeploymentStatus\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Operational deployment status of the network element or node associated with the alarm.\" },\n    { \"name\": \"nodeStatus\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Operational status of the network element or node associated with the alarm.\" },\n    { \"name\": \"observeCollectionId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the NIFI observe-collection event that produced this alarm.\" },\n    { \"name\": \"observeCollectionSource\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Observe collection source, e.g. the GCS file path/URL if we are processing files or the API used to fetch the alarms.\" },\n    { \"name\": \"observeCollectionTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm was observed/collected by NIFI (observe layer).\" },\n    { \"name\": \"observeCollectionType\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Observe collection type: SNMP-TRAP, API, FILE.\" },\n    { \"name\": \"opco\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Operating company identifier associated with this alarm. Determined by cognitive automation platform (cap-nifi).\" },\n    { \"name\": \"operator\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Name or identifier of the operator or organization handling the alarm.\" },\n    { \"name\": \"originalPerceivedSeverity\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Original severity of the alarm.\" },\n    { \"name\": \"parentAlarm\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Reference to the parent alarm when this alarm is a result of root cause analysis.\" },\n    { \"name\": \"perceivedSeverity\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Lists the possible severities that can be allocated to an alarm; values are consistent with ITU-T X.733 (for example, critical, major, minor, warning, cleared).\" },\n    { \"name\": \"plannedActivityEndTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"End date and time of the planned activity related to this alarm or resource.\" },\n    { \"name\": \"plannedActivityId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the planned activity related to this alarm.\" },\n    { \"name\": \"plannedActivityStartTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Start date and time of the planned activity related to this alarm or resource.\" },\n    { \"name\": \"plannedOutageIndicator\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Indicates whether the alarm is associated with a planned outage or maintenance activity.\" },\n    { \"name\": \"priority\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Relative processing or handling priority of the alarm.\" },\n    { \"name\": \"probableCause\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Further qualifies the alarm in complement of the alarmType, indicating the probable reason for the alarm condition.\" },\n    { \"name\": \"problemOccurrences\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Number of times this problem or alarm condition has occurred.\" },\n    { \"name\": \"proposedRepairedActions\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Proposed repair or remedial actions to resolve the alarm condition.\" },\n    { \"name\": \"reportingSystemId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the system that reports the alarm into the management domain.\" },\n    { \"name\": \"serviceAffecting\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Indicates whether the alarm affects service or not.\" },\n    { \"name\": \"serviceProvider\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier or name of the service provider that owns or manages the resource raising the alarm.\" },\n    { \"name\": \"sharedType\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Type or nature of the sharing arrangement (for example, passive sharing, active sharing).\" },\n    { \"name\": \"sharingCompany\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Company with which the site or resource is shared.\" },\n    { \"name\": \"shortAt\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Short textual title or summary of the alarm, typically used as a concise description in user interfaces.\" },\n    { \"name\": \"siteGeograficalId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"ID of the RAN site associated with the alarmed resource.\" },\n    { \"name\": \"siteName\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Name of the RAN site associated with the alarmed resource.\" },\n    { \"name\": \"siteResponsible\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Party or organization responsible for the site where the alarmed resource is located.\" },\n    { \"name\": \"siteSharing\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Indicates whether the site is shared with other parties and possibly which ones.\" },\n    { \"name\": \"sourceEventTime\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Date and time when the alarm-event was created/updated in the source system.\" },\n    { \"name\": \"sourceOriginalId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the source alarm in its original source system. Determined by cognitive automation platform (cap-harmonizer).\" },\n    { \"name\": \"sourceSystemId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the system that originally detected or generated the alarm condition.\" },\n    { \"name\": \"specificProblem\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Specific problem that further qualifies the alarm in addition to the probableCause, typically a vendor-defined string.\" },\n    { \"name\": \"state\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Current lifecycle state of the alarm (for example, acknowledged, terminatedWithError, inProgress, done, cancel, canceled) as managed in the alarm system.\" },\n    { \"name\": \"technology\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Technology or network type associated with the alarm (for example, DSL, FTTx, LTE, 5G).\" },\n    { \"name\": \"totalServiceAffected\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Indicates the total number or extent of services impacted by the alarm.\" },\n    { \"name\": \"troubleTicketId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the trouble ticket associated with this alarm.\" },\n    { \"name\": \"vendor\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Vendor or manufacturer of the equipment associated with the alarm.\" },\n    { \"name\": \"workOrderId\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Identifier of the work order associated with handling or resolving the alarm.\" },\n    { \"name\": \"xcoordinate\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Site X GPS coordinates.\" },\n    { \"name\": \"ycoordinate\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Site Y GPS coordinates.\" },\n    { \"name\": \"zcoordinate\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Site Z GPS coordinates.\" },\n    { \"name\": \"zipcode\", \"type\": [ \"null\", \"string\" ], \"default\": null, \"doc\": \"Postal code of the site or location associated with the location associated with the alarm.\" }\n  ]\n}"
+      }, {
+        "description" : "",
+        "name" : "collector.id",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "dlq.retry.max",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "gcp.ingestion.project.id",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "cognet-ingestion-cfmsem-13319"
+      }, {
+        "description" : "",
+        "name" : "gcp.process.project.id",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "cognet-process-cfmsem-13319"
+      }, {
+        "description" : "",
+        "name" : "gcs.bucket",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "cap-observe-dev-incoming-47102"
+      }, {
+        "description" : "",
+        "name" : "gcs.prefix.archive",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "gcs.prefix.dlq",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "gcs.prefix.incoming",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "gcs.prefix.processed",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "lookup.sites.csv",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "lookup.sites.enabled",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "true"
+      }, {
+        "description" : "",
+        "name" : "lookup.sites.enrichment.enabled",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "false"
+      }, {
+        "description" : "",
+        "name" : "opco",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "RO"
+      }, {
+        "description" : "",
+        "name" : "pubsub.alarm.topic",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "pubsub.dlq.topic",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "pubsub.metrics.topic",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "retry.max",
+        "provided" : false,
+        "sensitive" : false
+      }, {
+        "description" : "",
+        "name" : "schema.version",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "1.2.0"
+      }, {
+        "description" : "",
+        "name" : "tech.domain",
+        "provided" : false,
+        "sensitive" : false
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "54a20731-4722-4b5c-9fe4-6ca3a1c5a035",
+    "flowIdentifier" : "B",
+    "timestamp" : 1780053107546
+  }
 }
